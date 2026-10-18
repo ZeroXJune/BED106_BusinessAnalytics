@@ -224,8 +224,9 @@ Ten minutes, during Weeks 12–13. The brief requires all three pages walked
 through, at least one interactive feature demonstrated live, at least two
 questions answered, and **every member speaking**.
 
-`docs/discussion_script.md` already covers the project's findings across three
-speakers and can be cut down for this. The live demonstration should be the
+`docs/dashboard_presentation_script.md` is the script for this: ten minutes,
+all three speaking, every page walked, with the segment slicer demonstrated
+live and six prepared answers for the questions. The live demonstration should be the
 **segment slicer on Page 3** — selecting Thin-Margin Buyers and showing the
 profit share collapse is the most persuasive thing on the dashboard.
 

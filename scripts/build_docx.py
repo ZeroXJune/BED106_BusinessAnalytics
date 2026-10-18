@@ -51,6 +51,8 @@ DOCUMENTS = [
      os.path.join(ROOT, "docs", "Checkpoint_4_Ethics.docx")),
     (os.path.join(ROOT, "docs", "powerbi_build_guide.md"),
      os.path.join(ROOT, "docs", "PowerBI_Build_Guide.docx")),
+    (os.path.join(ROOT, "docs", "dashboard_presentation_script.md"),
+     os.path.join(ROOT, "docs", "Dashboard_Presentation_Script.docx")),
 ]
 
 INK = RGBColor(0x1F, 0x29, 0x33)
