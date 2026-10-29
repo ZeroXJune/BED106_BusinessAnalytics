@@ -1,0 +1,80 @@
+table CategoryMonth
+	lineageTag: 9a96c15c-c46e-4a25-8d30-e9311a96f425
+
+	column year_month
+		dataType: string
+		lineageTag: 98797958-902d-478a-bcd4-62ff4f72e03a
+		summarizeBy: none
+		sourceColumn: year_month
+
+	column month_start
+		dataType: dateTime
+		lineageTag: 7491a5f6-8795-4650-99bf-572a65410948
+		summarizeBy: none
+		sourceColumn: month_start
+		formatString: yyyy-mm-dd
+
+	column year_number
+		dataType: int64
+		lineageTag: 5d8a8dce-0ba1-43ef-8cc6-cd929da5d828
+		summarizeBy: sum
+		sourceColumn: year_number
+
+	column quarter_number
+		dataType: int64
+		lineageTag: d37248d8-b8a2-450b-8303-d3471c7cd3cb
+		summarizeBy: sum
+		sourceColumn: quarter_number
+
+	column category_name
+		dataType: string
+		lineageTag: 692e1672-3565-4121-8b9e-acb13f1569a0
+		summarizeBy: none
+		sourceColumn: category_name
+
+	column sub_category_name
+		dataType: string
+		lineageTag: f3abce1c-98f5-4d21-b42a-9a1cb2f2c8f4
+		summarizeBy: none
+		sourceColumn: sub_category_name
+
+	column transaction_lines
+		dataType: int64
+		lineageTag: 84461810-8db9-4a5c-a657-a1a5f1087dd4
+		summarizeBy: sum
+		sourceColumn: transaction_lines
+
+	column units_sold
+		dataType: int64
+		lineageTag: 9e7f5dc8-6a02-4330-b9a5-a32d0fc98a67
+		summarizeBy: sum
+		sourceColumn: units_sold
+
+	column revenue
+		dataType: double
+		lineageTag: 24405ca9-7549-4ff3-9c7d-93b1f80795a9
+		summarizeBy: sum
+		sourceColumn: revenue
+
+	column profit
+		dataType: double
+		lineageTag: e1d0c1b3-3671-4141-8ba5-eed1addc2858
+		summarizeBy: sum
+		sourceColumn: profit
+
+	column margin_pct
+		dataType: double
+		lineageTag: 844e119a-d676-4bc5-bdec-4a3ca7cd9a71
+		summarizeBy: sum
+		sourceColumn: margin_pct
+
+	partition CategoryMonth = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(FolderPath & "category_month.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"year_month", type text}, {"month_start", type date}, {"year_number", Int64.Type}, {"quarter_number", Int64.Type}, {"category_name", type text}, {"sub_category_name", type text}, {"transaction_lines", Int64.Type}, {"units_sold", Int64.Type}, {"revenue", type number}, {"profit", type number}, {"margin_pct", type number}})
+				in
+				    Typed
