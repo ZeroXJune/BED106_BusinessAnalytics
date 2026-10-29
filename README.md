@@ -151,26 +151,6 @@ Two decisions worth knowing before reading the SQL:
   `revenue_per_month` so the short 2020 cannot be compared unfairly against a
   full year.
 
-## Before you submit
-
-Full checklist in [`docs/rubric_compliance.md`](docs/rubric_compliance.md).
-The five things only the group can supply:
-
-1. **Rewrite the business interpretations in your own words** (see the notice
-   above) and trim each to the 2–3 sentences the rubric asks for.
-2. Fill in the cover page: group name/number, submission date, member names.
-3. Confirm the dataset's exact licence on its source page and record it in the
-   Task 1.2 table.
-4. Take your own screenshots: run `sql/05_screenshot_queries.sql` block by block
-   and follow [`docs/screenshot_guide.md`](docs/screenshot_guide.md), which maps
-   each block to its report slot and gives the result to expect.
-5. Complete and sign `reports/Form_A_Individual_Contribution.md`, one per
-   member. This is required with every checkpoint.
-
-The repository folder is named `BED108_BusinessAnalytics`, but the course is
-**BED 106** per the project brief. The folder name is cosmetic; every document
-and SQL header now says BED 106.
-
 ## Limitation
 
 The source file contains no loss-making transactions across five years, profit
